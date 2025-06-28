@@ -11,7 +11,6 @@ import {
   Globe,
   Sparkles,
   Share2,
-  Smartphone,
   Zap
 } from 'lucide-react';
 import { toast } from 'sonner';

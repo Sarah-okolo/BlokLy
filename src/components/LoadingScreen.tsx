@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Wand2, Globe, Puzzle, Palette, Zap } from 'lucide-react';
+import { Sparkles, Wand2, Globe, Puzzle, Palette } from 'lucide-react';
 
 const loadingMessages = [
   { icon: Puzzle, text: "Coupling your blocks...", color: "text-purple-500" },
