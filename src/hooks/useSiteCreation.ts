@@ -22,8 +22,9 @@ export const useCreateSite = () => {
   
   return useMutation({
     mutationFn: async (payload: CreateSitePayload) => {
+      console.log('Creating site with payload:', payload);
       setCurrentStep('creating');
-      const response = await axiosInstance.post<CreateSiteResponse>('/sites/create', payload);
+      const response = await axiosInstance.post<CreateSiteResponse>('/projects', payload);
       return response.data;
     },
     onSuccess: (data) => {
