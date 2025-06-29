@@ -14,7 +14,7 @@ export interface SiteDetails {
   description?: string;
   theme: 'light' | 'dark' | 'custom';
   codeRepo?: string;
-  selectedSpaces: string[];
+  selectedSpaces: Space[];
 }
 
 interface UserState {

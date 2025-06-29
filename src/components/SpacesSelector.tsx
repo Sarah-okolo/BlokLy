@@ -24,13 +24,14 @@ export function SpacesSelector() {
     }
   }, [spaces, setUserSpaces]);
 
-  const handleSpaceToggle = (spaceId: string, checked: boolean) => {
-    const newSelectedSpaces = checked
-      ? [...siteDetails.selectedSpaces, spaceId]
-      : siteDetails.selectedSpaces.filter(id => id !== spaceId);
-    
-    setSiteDetails({ selectedSpaces: newSelectedSpaces });
+  const handleSpaceToggle = (spaceData: Space, checked: boolean) => {
+  const newSelectedSpaces = checked
+    ? [...siteDetails.selectedSpaces, spaceData]
+    : siteDetails.selectedSpaces.filter(s => s.id !== spaceData.id);
+
+    setSiteDetails({ ...siteDetails, selectedSpaces: newSelectedSpaces });
   };
+
 
   const handleNext = () => {
     if (siteDetails.selectedSpaces.length === 0) {
@@ -135,7 +136,7 @@ export function SpacesSelector() {
               >
                 <Card 
                   className={`cursor-pointer transition-all duration-300 card-glass hover:shadow-xl border-2 ${
-                    siteDetails.selectedSpaces.includes(space.id) 
+                    siteDetails.selectedSpaces.some(s => s.id === space.id) 
                       ? 'border-purple-400 bg-purple-50/80 dark:bg-purple-950/40 shadow-lg shadow-purple-500/20' 
                       : 'border-purple-200/30 hover:border-purple-300/50'
                   }`}
@@ -154,9 +155,9 @@ export function SpacesSelector() {
                         </CardDescription>
                       </div>
                       <Checkbox
-                        checked={siteDetails.selectedSpaces.includes(space.id)}
-                        onCheckedChange={(checked) => 
-                          handleSpaceToggle(space.id, checked as boolean)
+                        checked={siteDetails.selectedSpaces.some(s => s.id === space.id)}
+                        onCheckedChange={(checked) =>
+                          handleSpaceToggle(space, checked as boolean)
                         }
                         className="data-[state=checked]:bg-purple-500 data-[state=checked]:border-purple-500"
                       />

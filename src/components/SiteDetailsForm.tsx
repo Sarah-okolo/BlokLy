@@ -30,7 +30,7 @@ export function SiteDetailsForm() {
     e.preventDefault();
     
     createSite.mutate({
-      spaces: siteDetails.selectedSpaces,
+      spaces: siteDetails.selectedSpaces.map((space: any) => space.id),
       name: localDetails.name || undefined,
       description: localDetails.description || undefined,
       theme: localDetails.theme,
