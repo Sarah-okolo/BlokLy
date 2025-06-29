@@ -41,9 +41,9 @@ export function SiteDetailsForm() {
   const selectedSpacesCount = siteDetails.selectedSpaces.length;
 
   const themeOptions = [
-    { value: 'light', label: 'Light', icon: Sun, color: 'from-yellow-400 to-orange-400' },
+    { value: 'light', label: 'Light', icon: Sun, color: 'from-yellow-400 to-green-400' },
     { value: 'dark', label: 'Dark', icon: Moon, color: 'from-gray-600 to-gray-800' },
-    { value: 'custom', label: 'Custom', icon: Wand2, color: 'from-purple-500 to-pink-500' },
+    { value: 'custom', label: 'Custom', icon: Wand2, color: 'from-green-500 to-pink-500' },
   ];
 
   return (
@@ -55,9 +55,9 @@ export function SiteDetailsForm() {
       >
         <h2 className="text-4xl md:text-5xl font-bold gradient-text-primary">Site Details</h2>
         <p className="text-muted-foreground text-lg">
-          Customize your AI-powered site with <span className="text-purple-600 font-semibold">{selectedSpacesCount}</span> selected space{selectedSpacesCount > 1 ? 's' : ''}
+          Customize your AI-powered site with <span className="text-green-600 font-semibold">{selectedSpacesCount}</span> selected space{selectedSpacesCount > 1 ? 's' : ''}
         </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-pink-500 rounded-full mx-auto"></div>
       </motion.div>
 
       <motion.div
@@ -65,11 +65,11 @@ export function SiteDetailsForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <Card className="card-glass border-purple-200/30 shadow-xl">
+        <Card className="card-glass border-green-200/30 shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center space-x-3 text-2xl">
-              <div className="p-2 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg">
-                <Sparkles className="h-6 w-6 text-purple-500" />
+              <div className="p-2 bg-gradient-to-br from-green-500/20 to-pink-500/20 rounded-lg">
+                <Sparkles className="h-6 w-6 text-green-500" />
               </div>
               <span>Site Configuration</span>
             </CardTitle>
@@ -92,7 +92,7 @@ export function SiteDetailsForm() {
                   placeholder="My Amazing Site"
                   value={localDetails.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="border-purple-200/40 focus:border-purple-400 focus:ring-purple-400/20"
+                  className="border-green-200/40 focus:border-green-400 focus:ring-green-400/20"
                 />
                 <p className="text-sm text-muted-foreground">
                   💡 If not provided, we'll generate one based on your content
@@ -113,7 +113,7 @@ export function SiteDetailsForm() {
                   value={localDetails.description}
                   onChange={(e) => handleInputChange('description', e.target.value)}
                   rows={3}
-                  className="border-purple-200/40 focus:border-purple-400 focus:ring-purple-400/20"
+                  className="border-green-200/40 focus:border-green-400 focus:ring-green-400/20"
                 />
               </motion.div>
 
@@ -125,7 +125,7 @@ export function SiteDetailsForm() {
                 className="space-y-4"
               >
                 <Label className="flex items-center space-x-2 text-base font-medium">
-                  <Palette className="h-5 w-5 text-purple-500" />
+                  <Palette className="h-5 w-5 text-green-500" />
                   <span>Theme Preference</span>
                 </Label>
                 <RadioGroup
@@ -142,14 +142,14 @@ export function SiteDetailsForm() {
                         whileTap={{ scale: 0.98 }}
                         className={`relative cursor-pointer rounded-xl border-2 p-4 transition-all bg-white/80 dark:bg-gray-900/80 ${
                           localDetails.theme === option.value
-                            ? 'border-purple-400 bg-purple-50/80 dark:bg-purple-950/40'
-                            : 'border-purple-200/30 hover:border-purple-300/50 hover:bg-purple-50/40'
+                            ? 'border-green-400 bg-green-50/80 dark:bg-green-950/40'
+                            : 'border-green-200/30 hover:border-green-300/50 hover:bg-green-50/40'
                         }`}
                       >
                         <RadioGroupItem 
                           value={option.value} 
                           id={option.value} 
-                          className="absolute top-3 right-3 data-[state=checked]:bg-purple-500 data-[state=checked]:border-purple-500"
+                          className="absolute top-3 right-3 data-[state=checked]:bg-green-500 data-[state=checked]:border-green-500"
                         />
                         <Label htmlFor={option.value} className="cursor-pointer space-y-3">
                           <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${option.color} flex items-center justify-center mx-auto`}>
@@ -171,7 +171,7 @@ export function SiteDetailsForm() {
                 className="space-y-3"
               >
                 <Label htmlFor="codeRepo" className="flex items-center space-x-2 text-base font-medium">
-                  <Github className="h-5 w-5 text-purple-500" />
+                  <Github className="h-5 w-5 text-green-500" />
                   <span>Code Repository (Optional)</span>
                 </Label>
                 <Input
@@ -179,7 +179,7 @@ export function SiteDetailsForm() {
                   placeholder="https://github.com/username/repo"
                   value={localDetails.codeRepo}
                   onChange={(e) => handleInputChange('codeRepo', e.target.value)}
-                  className="border-purple-200/40 focus:border-purple-400 focus:ring-purple-400/20"
+                  className="border-green-200/40 focus:border-green-400 focus:ring-green-400/20"
                 />
                 <p className="text-sm text-muted-foreground">
                   🔗 Link to your code repository for enhanced AI understanding
@@ -197,7 +197,7 @@ export function SiteDetailsForm() {
                   type="button"
                   variant="outline"
                   onClick={() => setCurrentStep('spaces')}
-                  className="border-purple-200 hover:bg-purple-50 dark:hover:bg-purple-950/20"
+                  className="border-green-200 hover:bg-green-50 dark:hover:bg-green-950/20"
                   size="lg"
                 >
                   <ArrowLeft className="mr-2 h-5 w-5" />
@@ -207,7 +207,7 @@ export function SiteDetailsForm() {
                 <Button
                   type="submit"
                   disabled={createSite.isPending}
-                  className="min-w-[180px] bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 border-0 shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                  className="min-w-[180px] bg-gradient-to-r from-green-500 to-pink-500 hover:from-green-600 hover:to-pink-600 border-0 shadow-lg hover:shadow-green-500/25 transition-all duration-300"
                   size="lg"
                 >
                   {createSite.isPending ? (

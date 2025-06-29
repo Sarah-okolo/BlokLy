@@ -47,15 +47,15 @@ export function SpacesSelector() {
         <div className="text-center space-y-4">
           <h2 className="text-4xl font-bold gradient-text-primary">Select Your Spaces</h2>
           <p className="text-muted-foreground text-lg">Loading your Storyblok spaces...</p>
-          <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto animate-pulse"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-pink-500 rounded-full mx-auto animate-pulse"></div>
         </div>
         
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 6 }).map((_, i) => (
-            <Card key={i} className="card-glass border-purple-200/30">
+            <Card key={i} className="card-glass border-green-200/30">
               <CardHeader>
-                <Skeleton className="h-5 w-3/4 bg-purple-200/20" />
-                <Skeleton className="h-4 w-1/2 bg-blue-200/20" />
+                <Skeleton className="h-5 w-3/4 bg-green-200/20" />
+                <Skeleton className="h-4 w-1/2 bg-pink-200/20" />
               </CardHeader>
               <CardContent>
                 <Skeleton className="h-4 w-full mb-2 bg-green-200/20" />
@@ -96,7 +96,7 @@ export function SpacesSelector() {
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           Choose the Storyblok spaces you want to include in your AI-powered site
         </p>
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-pink-500 rounded-full mx-auto"></div>
       </motion.div>
       
       {userSpaces.length === 0 ? (
@@ -105,13 +105,13 @@ export function SpacesSelector() {
           animate={{ opacity: 1, scale: 1 }}
           className="text-center space-y-6 max-w-md mx-auto"
         >
-          <div className="p-8 card-glass rounded-2xl border border-purple-200/30">
-            <Globe className="h-16 w-16 text-purple-400 mx-auto mb-4" />
+          <div className="p-8 card-glass rounded-2xl border border-green-200/30">
+            <Globe className="h-16 w-16 text-green-400 mx-auto mb-4" />
             <p className="text-muted-foreground text-lg mb-4">No spaces found in your account.</p>
             <Button 
               variant="outline"
               onClick={() => window.open('https://app.storyblok.com', '_blank')}
-              className="border-purple-200 hover:bg-purple-50 dark:hover:bg-purple-950/20"
+              className="border-green-200 hover:bg-green-50 dark:hover:bg-green-950/20"
             >
               Create a space in Storyblok
             </Button>
@@ -137,16 +137,16 @@ export function SpacesSelector() {
                 <Card 
                   className={`cursor-pointer transition-all duration-300 card-glass hover:shadow-xl border-2 ${
                     siteDetails.selectedSpaces.some(s => s.id === space.id) 
-                      ? 'border-purple-400 bg-purple-50/80 dark:bg-purple-950/40 shadow-lg shadow-purple-500/20' 
-                      : 'border-purple-200/30 hover:border-purple-300/50'
+                      ? 'border-green-400 bg-green-50/80 dark:bg-green-950/40 shadow-lg shadow-green-500/20' 
+                      : 'border-green-200/30 hover:border-green-300/50'
                   }`}
                 >
                   <CardHeader className="pb-3">
                     <div className="flex items-start justify-between">
                       <div className="flex-1 space-y-2">
-                        <CardTitle className="flex items-center space-x-3 text-lg group-hover:text-purple-600 transition-colors">
-                          <div className="p-2 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg">
-                            <Globe className="h-4 w-4 text-purple-500" />
+                        <CardTitle className="flex items-center space-x-3 text-lg group-hover:text-green-600 transition-colors">
+                          <div className="p-2 bg-gradient-to-br from-green-500/20 to-pink-500/20 rounded-lg">
+                            <Globe className="h-4 w-4 text-green-500" />
                           </div>
                           <span>{space.name}</span>
                         </CardTitle>
@@ -159,7 +159,7 @@ export function SpacesSelector() {
                         onCheckedChange={(checked) =>
                           handleSpaceToggle(space, checked as boolean)
                         }
-                        className="data-[state=checked]:bg-purple-500 data-[state=checked]:border-purple-500"
+                        className="data-[state=checked]:bg-green-500 data-[state=checked]:border-green-500"
                       />
                     </div>
                   </CardHeader>
@@ -171,7 +171,7 @@ export function SpacesSelector() {
                       </div>
                       <div className="flex items-center space-x-1">
                         <Star className="h-3 w-3 text-yellow-500" />
-                        <span className="font-medium capitalize text-purple-600">{space.plan}</span>
+                        <span className="font-medium capitalize text-green-600">{space.plan}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -190,7 +190,7 @@ export function SpacesSelector() {
               onClick={handleNext}
               disabled={siteDetails.selectedSpaces.length === 0}
               size="lg"
-              className="min-w-[250px] bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 disabled:from-gray-400 disabled:to-gray-500 border-0 shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+              className="min-w-[250px] bg-gradient-to-r from-green-500 to-pink-500 hover:from-green-600 hover:to-pink-600 disabled:from-gray-400 disabled:to-gray-500 border-0 shadow-lg hover:shadow-green-500/25 transition-all duration-300"
             >
               Continue to Details
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -200,7 +200,7 @@ export function SpacesSelector() {
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-center text-sm text-muted-foreground bg-purple-50/80 dark:bg-purple-950/40 px-4 py-2 rounded-full border border-purple-200/30"
+                className="text-center text-sm text-muted-foreground bg-green-50/80 dark:bg-green-950/40 px-4 py-2 rounded-full border border-green-200/30"
               >
                 ✨ {siteDetails.selectedSpaces.length} space{siteDetails.selectedSpaces.length > 1 ? 's' : ''} selected
               </motion.p>

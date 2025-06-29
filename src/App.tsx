@@ -41,9 +41,9 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden w-screen">
       <StickyHeader />
-      <main className="container mx-auto px-4 py-8">
+      <main className="mx-auto overflow-x-hidden">
         {renderCurrentStep()}
       </main>
       <Toaster position="top-right" />

@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Sparkles, Wand2, Globe, Puzzle, Palette } from 'lucide-react';
 
 const loadingMessages = [
-  { icon: Puzzle, text: "Coupling your blocks...", color: "text-purple-500" },
-  { icon: Wand2, text: "Weaving your story...", color: "text-blue-500" },
+  { icon: Puzzle, text: "Coupling your blocks...", color: "text-green-500" },
+  { icon: Wand2, text: "Weaving your story...", color: "text-pink-500" },
   { icon: Palette, text: "Painting your vision...", color: "text-green-500" },
   { icon: Globe, text: "Deploying your magic...", color: "text-yellow-500" },
   { icon: Sparkles, text: "Adding the final touches...", color: "text-pink-500" },
@@ -32,7 +32,7 @@ export function LoadingScreen() {
         animate={{ rotate: 360 }}
         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
       >
-        <div className="w-32 h-32 border-4 border-purple-200/30 border-t-purple-500 border-r-blue-500 rounded-full" />
+        <div className="w-32 h-32 border-4 border-green-200/30 border-t-green-500 border-r-pink-500 rounded-full" />
         <motion.div
           className="absolute inset-0 flex items-center justify-center"
           animate={{ 
@@ -44,8 +44,8 @@ export function LoadingScreen() {
             rotate: { duration: 4, repeat: Infinity, ease: "linear" }
           }}
         >
-          <div className="p-4 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full glass-effect">
-            <Sparkles className="h-12 w-12 text-purple-500" />
+          <div className="p-4 bg-gradient-to-br from-green-500/20 to-pink-500/20 rounded-full glass-effect">
+            <Sparkles className="h-12 w-12 text-green-500" />
           </div>
         </motion.div>
       </motion.div>
@@ -89,10 +89,10 @@ export function LoadingScreen() {
       <div className="w-full max-w-lg space-y-3">
         <div className="h-3 bg-white/10 rounded-full overflow-hidden glass-effect">
           <motion.div
-            className="h-full bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 rounded-full"
+            className="h-full bg-gradient-to-r from-green-500 via-pink-500 to-green-500 rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ duration: 20, ease: "easeInOut" }}
+            transition={{ duration: 80, ease: "easeInOut" }}
           />
         </div>
         <div className="flex justify-between text-xs text-muted-foreground">
@@ -108,8 +108,8 @@ export function LoadingScreen() {
           <motion.div
             key={i}
             className={`absolute w-2 h-2 rounded-full ${
-              i % 3 === 0 ? 'bg-purple-400/40' :
-              i % 3 === 1 ? 'bg-blue-400/40' : 'bg-green-400/40'
+              i % 3 === 0 ? 'bg-green-400/40' :
+              i % 3 === 1 ? 'bg-pink-400/40' : 'bg-green-400/40'
             }`}
             animate={{
               x: [0, 200, 0],

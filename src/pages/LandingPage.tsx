@@ -12,7 +12,7 @@ export function LandingPage() {
       icon: Sparkles,
       title: "AI-Powered",
       description: "Transform your Storyblok content into beautiful websites automatically",
-      color: "text-purple-500"
+      color: "text-green-500"
     },
     {
       icon: Zap,
@@ -24,7 +24,7 @@ export function LandingPage() {
       icon: Globe,
       title: "Production Ready",
       description: "SEO optimized, responsive, and ready for the world",
-      color: "text-blue-500"
+      color: "text-pink-500"
     },
     {
       icon: Wand2,
@@ -35,15 +35,15 @@ export function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden animated-gradient">
+    <div className="min-h-screen relative p-5 overflow-hidden animated-gradient">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
             key={i}
             className={`absolute w-3 h-3 rounded-full ${
-              i % 4 === 0 ? 'bg-purple-400/30' :
-              i % 4 === 1 ? 'bg-blue-400/30' :
+              i % 4 === 0 ? 'bg-green-400/30' :
+              i % 4 === 1 ? 'bg-pink-400/30' :
               i % 4 === 2 ? 'bg-green-400/30' : 'bg-yellow-400/30'
             }`}
             animate={{
@@ -65,7 +65,7 @@ export function LandingPage() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center space-y-12 px-4">
+      <div className="relative z-10 max-w-5xl mx-auto text-center space-y-9">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,25 +82,25 @@ export function LandingPage() {
                 rotate: { duration: 20, repeat: Infinity, ease: "linear" },
                 scale: { duration: 4, repeat: Infinity }
               }}
-              className="p-6 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full glass-effect animate-pulse-glow"
+              className="p-6 bg-gradient-to-br from-green-500/20 to-pink-500/20 rounded-full glass-effect animate-pulse-glow"
             >
-              <Sparkles className="h-16 w-16 text-purple-500" />
+              <Sparkles className="h-16 w-16 text-green-500" />
             </motion.div>
           </div>
           
           <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-bold">
-              <span className="gradient-text-primary">Storyblok AI</span>
+            <h1 className="text-5xl md:text-7xl font-bold">
+              <span className="gradient-text-primary">BlokLy AI</span>
             </h1>
             
-            <h2 className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-semibold ">
               Site Generator
             </h2>
           </div>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Transform your Storyblok spaces into stunning, AI-powered websites in minutes. 
-            <span className="text-purple-600 font-semibold"> No coding required</span>, just pure magic. ✨
+            <span className="text-green-600 font-semibold"> No coding required</span>, just pure magic. ✨
           </p>
         </motion.div>
 
@@ -113,7 +113,7 @@ export function LandingPage() {
           <Button
             size="lg"
             onClick={() => setConnectDialogOpen(true)}
-            className="text-xl px-12 py-8 hover:scale-105 transition-all duration-300 gradient-bg-primary shadow-2xl hover:shadow-purple-500/25 border-0"
+            className="text-xl px-12 py-8 hover:scale-105 transition-all duration-300 bg-green-800 shadow-2xl hover:bg-green-800/75 border-0"
           >
             <Rocket className="mr-3 h-6 w-6" />
             Connect Storyblok Account
@@ -178,11 +178,11 @@ export function LandingPage() {
                 repeat: Infinity,
                 delay: i * 0.5
               }}
-              className="p-3 rounded-full bg-gradient-to-br from-purple-500/10 to-blue-500/10 glass-effect"
+              className="p-3 rounded-full bg-gradient-to-br from-green-500/10 to-pink-500/10 glass-effect"
             >
               <Icon className={`h-6 w-6 ${
-                i === 0 ? 'text-purple-400' :
-                i === 1 ? 'text-blue-400' : 'text-yellow-400'
+                i === 0 ? 'text-green-400' :
+                i === 1 ? 'text-pink-400' : 'text-yellow-400'
               }`} />
             </motion.div>
           ))}

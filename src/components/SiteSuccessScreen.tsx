@@ -43,13 +43,13 @@ export function SiteSuccessScreen() {
       icon: Sparkles,
       title: "Your site is already optimized with AI",
       description: "SEO, performance, and responsive design are all handled automatically",
-      color: "text-purple-500"
+      color: "text-green-500"
     },
     {
       icon: Wand2,
       title: "Connect the Visual Editor",
       description: "Make real-time edits and see changes instantly on your live site",
-      color: "text-blue-500"
+      color: "text-pink-500"
     },
     {
       icon: Share2,
@@ -98,7 +98,7 @@ export function SiteSuccessScreen() {
         <Card className="card-glass border-green-200/30 shadow-xl">
           <CardHeader>
             <CardTitle className="flex items-center space-x-3 text-2xl">
-              <div className="p-2 bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-lg">
+              <div className="p-2 bg-gradient-to-br from-green-500/20 to-pink-500/20 rounded-lg">
                 <Globe className="h-6 w-6 text-green-500" />
               </div>
               <span>{createdSite.name}</span>
@@ -109,7 +109,7 @@ export function SiteSuccessScreen() {
           </CardHeader>
           <CardContent className="space-y-6">
             {/* URL Display */}
-            <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-green-50/80 to-blue-50/80 dark:from-green-950/40 dark:to-blue-950/40 rounded-xl border border-green-200/30">
+            <div className="flex items-center space-x-3 p-4 bg-gradient-to-r from-green-50/80 to-pink-50/80 dark:from-green-950/40 dark:to-pink-950/40 rounded-xl border border-green-200/30">
               <span className="flex-1 font-mono text-sm break-all">{createdSite.url}</span>
               <Button
                 variant="outline"
@@ -146,7 +146,7 @@ export function SiteSuccessScreen() {
                 variant="outline"
                 onClick={handleConnectEditor}
                 disabled={connectEditor.isPending}
-                className="flex items-center space-x-2 border-purple-200 hover:bg-purple-50 dark:hover:bg-purple-950/20"
+                className="flex items-center space-x-2 border-green-200 hover:bg-green-50 dark:hover:bg-green-950/20"
                 size="lg"
               >
                 {connectEditor.isPending ? (
@@ -167,11 +167,11 @@ export function SiteSuccessScreen() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
       >
-        <Card className="card-glass border-purple-200/30">
+        <Card className="card-glass border-green-200/30">
           <CardHeader>
             <CardTitle className="flex items-center space-x-3 text-2xl">
-              <div className="p-2 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg">
-                <Sparkles className="h-6 w-6 text-purple-500" />
+              <div className="p-2 bg-gradient-to-br from-green-500/20 to-pink-500/20 rounded-lg">
+                <Sparkles className="h-6 w-6 text-green-500" />
               </div>
               <span>What's Next?</span>
             </CardTitle>
@@ -213,7 +213,7 @@ export function SiteSuccessScreen() {
         <Button
           onClick={resetFlow}
           variant="outline"
-          className="min-w-[250px] border-purple-200 hover:bg-purple-50 dark:hover:bg-purple-950/20"
+          className="min-w-[250px] border-green-200 hover:bg-green-50 dark:hover:bg-green-950/20"
           size="lg"
         >
           <Zap className="mr-2 h-5 w-5" />

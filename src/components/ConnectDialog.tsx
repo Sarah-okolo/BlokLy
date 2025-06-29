@@ -42,11 +42,11 @@ export function ConnectDialog({ open, onOpenChange }: ConnectDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[550px] dialog-glass border-purple-200/30 shadow-2xl">
+      <DialogContent className="sm:max-w-[550px] dialog-glass border-green-200/30 shadow-2xl">
         <DialogHeader className="space-y-4">
           <DialogTitle className="flex items-center space-x-3 text-2xl">
-            <div className="p-2 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg">
-              <Key className="h-6 w-6 text-purple-500" />
+            <div className="p-2 bg-gradient-to-br from-green-500/20 to-pink-500/20 rounded-lg">
+              <Key className="h-6 w-6 text-green-500" />
             </div>
             <span className="gradient-text-primary">Connect Your Storyblok Account</span>
           </DialogTitle>
@@ -69,16 +69,16 @@ export function ConnectDialog({ open, onOpenChange }: ConnectDialogProps) {
               value={token}
               onChange={(e) => setToken(e.target.value)}
               disabled={validateToken.isPending}
-              className="border-purple-200/40 focus:border-purple-400 focus:ring-purple-400/20 text-base py-3"
+              className="border-green-200/40 focus:border-green-400 focus:ring-green-400/20 text-base py-3"
             />
             
-            <div className="flex items-start space-x-2 p-3 bg-blue-50/80 dark:bg-blue-950/40 rounded-lg border border-blue-200/30">
-              <Shield className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-              <div className="text-sm text-blue-700 dark:text-blue-300">
+            <div className="flex items-start space-x-2 p-3 bg-pink-50/80 dark:bg-pink-950/40 rounded-lg border border-pink-200/30">
+              <Shield className="h-4 w-4 text-pink-500 mt-0.5 flex-shrink-0" />
+              <div className="text-sm text-pink-700 dark:text-pink-300">
                 <p className="font-medium mb-1">Don't have a token?</p>
                 <Button
                   variant="link"
-                  className="p-0 h-auto text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                  className="py-1 px-2  h-auto text-green-600 hover:text-green-700 dark:text-pink-400 dark:hover:text-pink-300"
                   onClick={() => window.open('https://app.storyblok.com/#!/me/account?tab=token', '_blank')}
                   type="button"
                 >
@@ -95,14 +95,14 @@ export function ConnectDialog({ open, onOpenChange }: ConnectDialogProps) {
               variant="outline"
               onClick={() => onOpenChange(false)}
               disabled={validateToken.isPending}
-              className="border-purple-200 hover:bg-purple-50 dark:hover:bg-purple-950/20"
+              className="border-green-200 hover:bg-green-50 dark:hover:bg-green-950/20"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={!token.trim() || validateToken.isPending}
-              className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 border-0 shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+              className="bg-gradient-to-r from-green-500 to-pink-500 hover:from-green-600 hover:to-pink-600 border-0 shadow-lg hover:shadow-green-500/25 transition-all duration-300"
             >
               {validateToken.isPending ? (
                 <>
