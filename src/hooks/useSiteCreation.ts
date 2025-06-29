@@ -1,10 +1,10 @@
 import { useMutation } from '@tanstack/react-query';
 import { axiosInstance } from '@/lib/axiosInstance';
-import { useUserStore } from '@/store/userStore';
+import { Space, useUserStore } from '@/store/userStore';
 import { toast } from 'sonner';
 
 interface CreateSitePayload {
-  spaces: string[];
+  spaces: Space[];
   name?: string;
   description?: string;
   theme: 'light' | 'dark' | 'custom';
