@@ -92,7 +92,7 @@ export function LoadingScreen() {
             className="h-full bg-gradient-to-r from-green-500 via-pink-500 to-green-500 rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ duration: 80, ease: "easeInOut" }}
+            transition={{ duration: 30, ease: "easeInOut" }}
           />
         </div>
         <div className="flex justify-between text-xs text-muted-foreground">
