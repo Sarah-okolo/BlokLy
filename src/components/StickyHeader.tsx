@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import { useUserStore } from '@/store/userStore';
-import { Sparkles, Plus } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export function StickyHeader() {
-  const { isConnected, resetFlow } = useUserStore();
+  const { isConnected } = useUserStore();
 
   if (!isConnected) return null;
 
