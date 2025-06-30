@@ -20,14 +20,14 @@ export function StickyHeader() {
           </div>
         </div>
         
-        <Button 
+        {/* <Button 
           onClick={resetFlow}
           className="flex items-center space-x-2 bg-gradient-to-r from-green-500 to-pink-500 hover:from-green-600 hover:to-pink-600 border-0 shadow-lg hover:shadow-green-500/25 transition-all duration-300"
           size="sm"
         >
           <Plus className="h-4 w-4" />
           <span>Create New Site</span>
-        </Button>
+        </Button> */}
       </div>
     </header>
   );
